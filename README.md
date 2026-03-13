@@ -4,6 +4,7 @@
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-2.3-green)
 ![Maven](https://img.shields.io/badge/Maven-Build-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 API REST desenvolvida com **Spring Boot** para gerenciamento de chamados de suporte técnico.
 
