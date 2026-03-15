@@ -12,19 +12,18 @@ O sistema permite o cadastro de **clientes, técnicos e chamados**, possibilitan
 
 ---
 
-## 🚀 Tecnologias
+# 🚀 Tecnologias
 
 - Java
 - Spring Boot
 - Spring Data JPA
-- Spring Security
 - Maven
 - MySQL
 - H2 Database
 
 ---
 
-## 🏗 Arquitetura da aplicação
+# 🏗 Arquitetura da aplicação
 
 A aplicação segue o padrão de arquitetura em camadas.
 
@@ -49,53 +48,34 @@ Database
 
 ---
 
-## 🧠 Modelo de Domínio
+# 🧠 Modelo de Domínio
 
 O sistema Helpdesk foi modelado utilizando orientação a objetos.
 
-A entidade **Pessoa** representa os usuários do sistema e possui duas especializações:
+As principais entidades do sistema são:
 
+- Pessoa
 - Cliente
-- Técnico
+- Tecnico
+- Chamado
 
-A entidade **Chamado** representa os tickets de atendimento.
+O sistema também utiliza enums para regras de negócio:
 
-Além das entidades principais, o sistema utiliza enums para representar regras de negócio:
-
-- **Perfil** → define os perfis de acesso do usuário
-- **Status** → define a situação do chamado
-- **Prioridade** → define o nível de prioridade do chamado
-
-### Relacionamentos
-
-- Um **Cliente** pode possuir vários **Chamados**
-- Um **Técnico** pode atender vários **Chamados**
-- Cada **Chamado** pertence a um cliente e é atendido por um técnico
-
-### Enums do sistema
-
-**Perfil**
-- ADMIN
-- CLIENTE
-- TECNICO
-
-**Status**
-- ABERTO
-- ANDAMENTO
-- ENCERRADO
-
-**Prioridade**
-- BAIXA
-- MEDIA
-- ALTA
+- Perfil
+- Status
+- Prioridade
 
 ### Diagrama do Modelo Conceitual
 
 ![Modelo Conceitual](docs/modelo-conceitual.png)
 
+📚 Documentação detalhada do domínio:
+
+- [Modelo de Domínio](docs/modelo-dominio.md)
+
 ---
 
-## 📡 Endpoints da API
+# 📡 Endpoints da API
 
 | Método | Endpoint | Descrição |
 |------|------|------|
@@ -117,41 +97,46 @@ Além das entidades principais, o sistema utiliza enums para representar regras 
 
 ---
 
-## 📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
 ```text
-src
- └─ main
-    └─ java
-       └─ com.nobre.helpdesk
-          ├─ controller
-          ├─ service
-          ├─ repository
-          ├─ domain
-          └─ domain.enums
+src/main/java/com.nobre.helpdesk
+
+controller
+service
+repository
+domain
+ ├ Pessoa
+ ├ Cliente
+ ├ Tecnico
+ ├ Chamado
+ └ enums
+     ├ Perfil
+     ├ Status
+     └ Prioridade
 ```
 
 ---
 
-## ▶️ Como executar o projeto
+# ▶️ Como executar o projeto
 
-### Pelo Spring Tool Suite (STS)
+## Pelo Spring Tool Suite (STS)
 
-1. Abra a classe principal:
+Abra a classe principal:
 
-```text
+```
 HelpdeskApplication.java
 ```
 
-2. Clique com o botão direito
+Clique com o botão direito:
 
-```text
+```
 Run As → Spring Boot App
 ```
 
 A aplicação iniciará em:
 
-```text
+```
 http://localhost:8080
 ```
 
@@ -159,26 +144,36 @@ http://localhost:8080
 
 ---
 
-### Pelo terminal
+## Pelo terminal
 
 Dentro da pasta do projeto execute:
 
-```bash
+```
 mvn spring-boot:run
 ```
 
 ---
 
-## 🧪 Banco H2
+# 🧪 Banco H2
 
 Console disponível em:
 
-```text
+```
 http://localhost:8080/h2-console
 ```
 
 ---
 
-## 👨‍💻 Autor
+# 📚 Documentação
+
+Documentação detalhada disponível na pasta **docs**:
+
+- [Arquitetura](docs/arquitetura.md)
+- [Modelo de Domínio](docs/modelo-dominio.md)
+- [Banco de Dados](docs/banco-de-dados.md)
+
+---
+
+# 👨‍💻 Autor
 
 José Nobre
